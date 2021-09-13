@@ -1,0 +1,17 @@
+.menu {
+    grid-column: 3 / 4;
+}
+@media (max-width: 767px) {
+    .menu {
+        display: none;
+    }
+}
+.list {
+     display: grid;
+     grid-auto-flow: column;
+     justify-items: end;
+     /* justify-content: end; */
+ }
+.list li {
+    margin: 0px 0px 0px 20px;
+}

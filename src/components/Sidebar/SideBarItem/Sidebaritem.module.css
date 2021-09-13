@@ -1,0 +1,20 @@
+.link {
+    font-size: 32px;
+
+    background: linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 1) 0%,
+            rgba(159, 191, 254, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+}
+.link li {
+    margin: 0 0 125px 0;
+}
+.activeLink {background: rgb(182,172,254);
+    background: linear-gradient(90deg, rgba(182,172,254,1) 50%, rgba(233,129,252,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

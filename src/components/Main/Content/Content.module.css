@@ -1,0 +1,10 @@
+@media (min-width: 992px) {
+    .content {
+        grid-column: 3 / 4;
+        padding: 0px 0px 0px 30px;
+    }
+
+}
+
+
+

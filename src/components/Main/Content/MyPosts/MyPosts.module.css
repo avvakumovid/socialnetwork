@@ -1,0 +1,48 @@
+.title {
+
+}
+.newPost {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 0 20px 0;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    border: 5px solid;
+    border-image: linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 1) 0%,
+            rgba(233, 129, 252, 1) 100%
+    );
+    -moz-border-image: -moz-linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 1) 0%,
+            rgba(233, 129, 252, 1) 100%
+    );
+    -webkit-border-image: -webkit-linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 1) 0%,
+            rgba(233, 129, 252, 1) 100%
+    );
+    margin: 0 10px 0 0;
+    border-image-slice: 1;
+}
+button {
+    height: 50px;
+    background: linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 1) 0%,
+            rgba(233, 129, 252, 1) 100%
+    );
+
+    padding: 10px;
+    border-image-slice: 1;
+}
+img {
+    max-width: 100%;
+}
+
+

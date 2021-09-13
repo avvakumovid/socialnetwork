@@ -1,0 +1,10 @@
+.profile {
+    display: flex;
+}
+.avatar {
+    padding: 0 15px 0 0;
+    width: 100px;
+}
+.image {
+    opacity: 0.9;
+}
