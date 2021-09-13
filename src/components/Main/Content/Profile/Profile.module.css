@@ -1,5 +1,8 @@
 .profile {
     display: flex;
+    font-size: 24px;
+    padding: 0 0 50px 0;
+
 }
 .avatar {
     padding: 0 15px 0 0;
@@ -7,4 +10,8 @@
 }
 .image {
     opacity: 0.9;
+}
+
+.description ul {
+    color: rgba(131, 214, 255, 1);
 }

@@ -9,7 +9,7 @@ const Profile = (props) => {
           <div className={s.avatar}>
               <img src="/img/png/fox.png" alt=""/>
           </div>
-          <div className="">
+          <div className={s.description}>
               <h2>Иван Аввакумов</h2>
               <ul>
                   <li>Date of birthday: 11.09.1997</li>

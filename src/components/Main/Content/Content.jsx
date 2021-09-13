@@ -5,7 +5,7 @@ import MyPosts from "./MyPosts/MyPosts";
 const Content = (props) => {
   return (<section className="content">
     <Profile/>
-   <MyPosts />
+    <MyPosts />
   </section>);
 }
 

@@ -34,6 +34,9 @@ ul {
 }
 /* ================ */
 
+/*rgba(131, 214, 255, 1) 0%,*/
+/*rgba(159, 191, 254, 1) 100%*/
+
 .wrapper {
     display: grid;
     min-height: 100vh;
@@ -52,5 +55,8 @@ ul {
 
 
 body {
-    color: #000;
+    color: rgba(233,129,252,1);
+/*rgba(182,172,254,1) 50%, rgba(233,129,252,1) 100%);*/
+/*    text-shadow: 1px 1px 2px rgba(182,172,254,1);*/
+    /*0 0 5px darkblue;*/
 }

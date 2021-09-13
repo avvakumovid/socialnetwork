@@ -1,5 +1,7 @@
 .post {
     display: flex;
+    font-size: 20px;
+    color: rgba(131, 214, 255, 1);
 }
 .post img {
     width: 80px;
