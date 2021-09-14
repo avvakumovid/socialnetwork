@@ -6,11 +6,11 @@ const Sidebar = (props) => {
       <aside className={s.sidebar}>
           <nav className={s.menu}>
               <ul className={s.list}>
-                  <Sidebaritem link={'/content'} name={'Profile'}/>
-                  <Sidebaritem link={'/messages'} name={"Messages"}/>
-                  <Sidebaritem link={'/news'} name={'News'}/>
-                  <Sidebaritem link={'/music'} name={'Music'}/>
-                  <Sidebaritem link={'/settings'} name={'Settings'}/>
+                  <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370554.png'} link={'/content'} name={'Profile'}/>
+                  <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370958.png'} link={'/messages'} name={"Messages"}/>
+                  <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370573.png'} link={'/news'} name={'News'}/>
+                  <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370551.png'} link={'/music'} name={'Music'}/>
+                  <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370578.png'} link={'/settings'} name={'Settings'}/>
               </ul>
           </nav>
       </aside>

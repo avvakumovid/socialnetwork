@@ -11,6 +11,7 @@
     align-items: center;
     display: grid;
     grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+    color: black;
 }
 
 @media (min-width: 550px) {

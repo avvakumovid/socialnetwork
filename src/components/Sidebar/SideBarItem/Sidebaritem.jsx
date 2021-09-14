@@ -3,8 +3,7 @@ import {NavLink} from "react-router-dom";
 
 const Sidebaritem = (props) => {
   return (<li>
-
-      <img src="/img/png/027-avatar.png" alt=""/>
+          <img className={s.linkImg} src={props.src} alt=""/>
       <NavLink to={props.link} className={s.link} activeClassName={s.activeLink}>{props.name}</NavLink>
       </li>
       );

@@ -3,11 +3,11 @@ import s from './Profile.module.css'
 const Profile = (props) => {
   return (<section>
       <div>
-          <img className={s.image} src="img/png/15-594.jpg" alt=""/>
+          <img className={s.image} src="https://www.ejin.ru/wp-content/uploads/2017/09/15-594.jpg" alt=""/>
       </div>
       <div className={s.profile}>
           <div className={s.avatar}>
-              <img src="/img/png/fox.png" alt=""/>
+              <img src="https://image.flaticon.com/icons/png/512/5188/5188670.png" alt=""/>
           </div>
           <div className={s.description}>
               <h2>Иван Аввакумов</h2>

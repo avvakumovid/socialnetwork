@@ -9,6 +9,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 5px;
+    line-height: 1;
 }
 .link li {
     margin: 0 0 125px 0;
@@ -19,4 +20,7 @@
     background: linear-gradient(90deg, rgba(182,172,254,1) 50%, rgba(233,129,252,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.linkImg{
+ float: left;
 }
