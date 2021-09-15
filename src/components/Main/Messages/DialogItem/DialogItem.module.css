@@ -1,0 +1,10 @@
+.dialog {
+    padding: 0 0 20px 0;
+    color: rgba(233,129,252,1);
+    display: block;
+    text-decoration: none;
+}
+
+.active {
+    color: rgba(131, 214, 255, 1);
+}
