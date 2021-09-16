@@ -8,14 +8,33 @@ import DialogItem from "./components/Main/Messages/DialogItem/DialogItem";
 import Message from "./components/Main/Messages/Message/Message";
 
 let postData = [
-    {id: 1, src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png', text: 'Lorem ipsum dolor.'},
-    {id: 2, src: 'https://image.flaticon.com/icons/png/512/2077/2077402.png', text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.\n' +
-            '                  Laboriosam, libero.'},
-    {id: 3, src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png', text: 'Lorem, ipsum dolor sit amet consectetur adipisicing.'},
-    {id: 4, src: 'https://image.flaticon.com/icons/png/512/2077/2077402.png', text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.\n' +
-            '                  Laboriosam, libero.'},
+    {
+        id: 1,
+        src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png',
+        text: 'Lorem ipsum dolor.',
+        likeCount: 10
+    },
+    {
+        id: 2,
+        src: 'https://image.flaticon.com/icons/png/512/2077/2077402.png',
+        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.\n' +
+            '                  Laboriosam, libero.',
+        likeCount: 10
+    },
+    {
+        id: 3,
+        src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png',
+        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing.',
+        likeCount: 10
+    },
+    {
+        id: 4,
+        src: 'https://image.flaticon.com/icons/png/512/2077/2077402.png',
+        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.\n' +
+            '                  Laboriosam, libero.',
+        likeCount: 10
+    },
 ]
-
 
 
 let dialogsData = [
@@ -37,10 +56,10 @@ let messagesData = [
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App posts={postData} dialogs={dialogsData} messages={messagesData}/>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <App posts={postData} dialogs={dialogsData} messages={messagesData}/>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

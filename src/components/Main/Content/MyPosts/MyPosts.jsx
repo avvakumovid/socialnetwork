@@ -5,7 +5,7 @@ import React from "react";
 
 
 const MyPosts = (props) => {
-    let posts = props.posts.map( p => <Post src={p.src} text={p.text}/>)
+    let posts = props.posts.map( p => <Post src={p.src} text={p.text} likeCount={p.likeCount}/>)
     return (
         <section>
             <h2 className={s.title}>New Posts</h2>

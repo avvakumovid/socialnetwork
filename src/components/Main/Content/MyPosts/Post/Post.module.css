@@ -1,9 +1,29 @@
 .post {
-    display: flex;
+    display: grid;
     font-size: 20px;
     color: black;
+    grid-template-columns: 1fr 10fr;
+    padding: 20px 0 0 0;
+
 }
 .post img {
     width: 80px;
     padding: 0 10px 0 0;
+
+
+}
+.image{
+    grid-row: 1/4;
+}
+.text{
+    grid-column-start: 2;
+}
+.likes{
+    padding: 10px 0 0 0;
+    grid-column-start: 2;
+
+}
+.likes img {
+
+    width: 30px;
 }
