@@ -1,14 +1,89 @@
+
+
 .dialogs {
     display: grid;
     grid-template-columns: 4fr 10fr;
+    grid-template-rows: 0.5fr 1fr 0.2fr;
+    grid-template-areas:
+            "dialogs messages"
+            "none messages"
+            "none sends";
+
     font-size: 26px;
+    gap: 20px
 }
 
 .dialogsItem {
-
+    grid-area: dialogs;
 }
 
 .messages {
-    color: rgba(131, 214, 255, 1);
+    grid-area: messages;
+    background: rgb(131, 214, 255);
+    background: linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 0.2) 0%,
+            rgba(233, 129, 252, 0.2) 100%
+    );
+    padding: 20px;
+    border-radius: 25px;
+}
+.sends {
+    grid-area: sends;
+    padding: 20px 0 0 0;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    gap: 10px;
+}
+.sends textarea {
+    width: 100%;
+    border: 5px solid;
+    border-image: linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 0.4) 0%,
+            rgba(233, 129, 252, 0.4) 100%
+    );
+    -moz-border-image: -moz-linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 0.4) 0%,
+            rgba(233, 129, 252, 0.4) 100%
+    );
+    -webkit-border-image: -webkit-linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 0.4) 0%,
+            rgba(233, 129, 252, 0.4) 100%
+    );
+    margin: 0 10px 0 0;
+    border-image-slice: 1;
+    font-family: "Urbanist", sans-serif;
+    font-size: 20px;
+    min-height: 100px;
+    resize: vertical;
+
 }
 
+.sendsBtn {
+    align-self: end;
+    justify-self: end;
+    border-radius: 25px;
+    width: 100px;
+    height: 50px;
+    background: linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 1) 0%,
+            rgba(233, 129, 252, 1) 100%
+    );
+
+    padding: 10px;
+    border-image-slice: 1;
+    color: #fff;
+}
+
+.heading {
+    background: rgb(131, 214, 255);
+    background: linear-gradient(90deg, rgba(131, 214, 255, 1) 0%, rgba(233,129,252,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+    line-height: 1;
+}

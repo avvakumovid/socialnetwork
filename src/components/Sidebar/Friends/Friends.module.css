@@ -1,0 +1,11 @@
+.friends{
+    background: rgb(131, 214, 255);
+    background: linear-gradient(90deg, rgba(131, 214, 255, 1) 0%, rgba(233,129,252,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.friends {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

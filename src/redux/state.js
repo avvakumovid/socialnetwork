@@ -1,4 +1,3 @@
-
 let state = {
     profilePage: {
         posts: [
@@ -41,12 +40,19 @@ let state = {
 
         ],
         messages: [
-            {message: 'Hi!', id: 1},
-            {message: 'How are you?', id: 2},
-            {message: 'What are you doing?', id: 3},
-            {message: 'lol 🚀', id: 3},
+            {message: 'Hi!', senderId: 1, id: 1},
+            {message: 'How are you?', senderId: 2, id: 2},
+            {message: 'What are you doing?', senderId: 1, id: 3},
+            {message: 'lol 🚀', senderId: 2, id: 3},
         ]
 
+    },
+    sidebarPage: {
+        friends: [
+            {id: 1, src: "https://cdn-icons-png.flaticon.com/512/1658/1658751.png", name: 'Rabbit'},
+            {id: 2, src: "https://cdn-icons-png.flaticon.com/512/1658/1658753.png", name: 'Deer'},
+            {id: 3, src: "https://cdn-icons-png.flaticon.com/512/1658/1658749.png", name: 'Bear'}
+        ]
     }
 }
 

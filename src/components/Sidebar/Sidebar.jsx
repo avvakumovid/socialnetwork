@@ -1,5 +1,6 @@
 import s from './Sidebar.module.css';
 import Sidebaritem from "./SideBarItem/Sidebaritem";
+import Friends from "./Friends/Friends";
 
 const Sidebar = (props) => {
   return(
@@ -13,6 +14,8 @@ const Sidebar = (props) => {
                   <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370578.png'} link={'/settings'} name={'Settings'}/>
               </ul>
           </nav>
+          <h2 className={s.heading}>Friends</h2>
+          <Friends  state={props.state}/>
       </aside>
   );
 }

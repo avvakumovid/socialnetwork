@@ -1,10 +1,28 @@
-.dialog {
-    padding: 0 0 20px 0;
+.dialog a{
+    padding: 15px;
     color: rgba(233,129,252,1);
     display: block;
     text-decoration: none;
+    margin: 0 0 15px 0;
+    background: linear-gradient(
+            90deg,
+            rgba(131, 214, 255, 0.2) 0%,
+            rgba(233, 129, 252, 0.2) 100%
+    );
+    border-radius: 25px;
+
+
 }
 
-.active {
+.dialog .active{
+
+    background: linear-gradient(
+            90deg,
+            rgba(233, 129, 252, 0.2) 0%,
+            rgba(131, 214, 255, 0.2)100%
+    );
     color: rgba(131, 214, 255, 1);
+    text-align: right;
+
 }
+

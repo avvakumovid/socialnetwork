@@ -10,7 +10,7 @@ const Profile = (props) => {
               <img src="https://image.flaticon.com/icons/png/512/5188/5188670.png" alt=""/>
           </div>
           <div className={s.description}>
-              <h2>Иван Аввакумов</h2>
+              <h2>Ivan Avvakumov</h2>
               <ul>
                   <li>Date of birthday: 11.09.1997</li>
                   <li>City: Zven</li>

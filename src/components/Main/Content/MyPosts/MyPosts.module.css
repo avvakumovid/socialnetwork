@@ -8,7 +8,7 @@
     margin: 0 0 20px 0;
 }
 
-textarea {
+.newPostText {
     display: block;
     width: 100%;
     border: 5px solid;
@@ -29,8 +29,14 @@ textarea {
     );
     margin: 0 10px 0 0;
     border-image-slice: 1;
+    min-height: 100px;
+    resize: vertical;
+    font-family: "Urbanist", sans-serif;
+    font-size: 20px;
+
 }
-button {
+.sendBtn {
+
     height: 50px;
     background: linear-gradient(
             90deg,

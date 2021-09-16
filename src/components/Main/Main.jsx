@@ -11,7 +11,7 @@ const Main = (props) => {
 
 
     return (<main className={s.main}>
-        <Sidebar/>
+        <Route path={'/'} render={() => <Sidebar state={props.state.sidebarPage}/>}/>
         <Route path={'/content'} render={() => <Content state={props.state.profilePage}/>} />
         <Route path={'/messages'} render={() => <Messages state={props.state.messagesPage}/>} />
         <Route path={'/music'} render={() => <Music />} />
