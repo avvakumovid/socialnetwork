@@ -12,8 +12,8 @@ const Main = (props) => {
 
     return (<main className={s.main}>
         <Sidebar/>
-        <Route path={'/content'} render={() => <Content posts={props.posts}/>} />
-        <Route path={'/messages'} render={() => <Messages dialogs={props.dialogs} messages={props.messages}/>} />
+        <Route path={'/content'} render={() => <Content state={props.state.profilePage}/>} />
+        <Route path={'/messages'} render={() => <Messages state={props.state.messagesPage}/>} />
         <Route path={'/music'} render={() => <Music />} />
         <Route path={'/news'} render={() => <News />} />
         <Route path={'/settings'} render={() => <Settings />} />

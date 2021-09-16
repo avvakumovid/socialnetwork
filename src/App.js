@@ -11,7 +11,7 @@ function App(props) {
         <div className="App">
             <div className="wrapper">
                 <Header/>
-                <Main posts={props.posts} dialogs={props.dialogs} messages={props.messages}/>
+                <Main state={props.state}/>
                 <Footer/>
             </div>
         </div>
