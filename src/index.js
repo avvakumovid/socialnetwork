@@ -15,7 +15,7 @@ let postData = [
     {id: 4, src: 'https://image.flaticon.com/icons/png/512/2077/2077402.png', text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.\n' +
             '                  Laboriosam, libero.'},
 ]
-let posts = postData.map( p => <Post src={p.src} text={p.text}/>)
+
 
 
 let dialogsData = [
@@ -26,7 +26,7 @@ let dialogsData = [
     {name: 'Ivan', id: 5},
 
 ]
-let dialogs = dialogsData.map(d => <DialogItem name={d.name} id={d.id}/>)
+
 
 let messagesData = [
     {message: 'Hi!', id: 1},
@@ -34,11 +34,11 @@ let messagesData = [
     {message: 'What are you doing?', id: 3},
     {message: 'lol 🚀', id: 3},
 ]
-let messages = messagesData.map( m =>  <Message message={m.message} id={m.id}/>)
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App posts={posts} dialogs={dialogs} messages={messages}/>
+    <App posts={postData} dialogs={dialogsData} messages={messagesData}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
