@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     profilePage: {
         posts: [
@@ -54,6 +56,18 @@ let state = {
             {id: 3, src: "https://cdn-icons-png.flaticon.com/512/1658/1658749.png", name: 'Bear'}
         ]
     }
+}
+
+export let addPost = (newMessage) => {
+
+    let newPost = {
+        id: 5,
+        src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png',
+        text: newMessage,
+        likeCount: 0,
+    };
+    state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state);
 }
 
 export default state;

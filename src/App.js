@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import {BrowserRouter} from "react-router-dom";
+
 
 function App(props) {
     return (
@@ -11,7 +11,7 @@ function App(props) {
         <div className="App">
             <div className="wrapper">
                 <Header/>
-                <Main state={props.state}/>
+                <Main state={props.state} addPost={props.addPost}/>
                 <Footer/>
             </div>
         </div>

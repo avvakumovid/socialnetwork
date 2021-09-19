@@ -7,9 +7,11 @@ import React from "react";
 const MyPosts = (props) => {
 
     let newTextElement = React.createRef();
-    let addPost = () => {
+    let addPost = () =>{
+    debugger;
         let text = newTextElement.current.value;
-        alert(text);
+        props.addPost(text);
+        newTextElement.current.value = '';
     }
     let posts = props.state.posts.map( p => <Post src={p.src} text={p.text} likeCount={p.likeCount}/>)
     return (
