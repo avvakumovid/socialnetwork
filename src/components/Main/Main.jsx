@@ -13,7 +13,7 @@ const Main = (props) => {
 
     return (<main className={s.main}>
         <Route path={'/'} render={() => <Sidebar state={props.state.sidebarPage}/>}/>
-        <Route path={'/content'} render={() => <Content state={props.state.profilePage} addPost={props.addPost}/>} />
+        <Route path={'/content'} render={() => <Content profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>} />
         <Route path={'/messages'} render={() => <Messages state={props.state.messagesPage}/>} />
         <Route path={'/music'} render={() => <Music />} />
         <Route path={'/news'} render={() => <News />} />

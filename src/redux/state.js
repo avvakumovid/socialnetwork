@@ -29,7 +29,8 @@ let state = {
                     '                  Laboriosam, libero.',
                 likeCount: 23
             },
-        ]
+        ],
+        newPostText: 'imba'
 
     },
     messagesPage: {
@@ -58,15 +59,23 @@ let state = {
     }
 }
 
-export let addPost = (newMessage) => {
+window.state = state;
+
+export let addPost = () => {
 
     let newPost = {
         id: 5,
         src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png',
-        text: newMessage,
+        text: state.profilePage.newPostText,
         likeCount: 0,
     };
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
 

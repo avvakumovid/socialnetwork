@@ -4,10 +4,11 @@ import MyPosts from "./MyPosts/MyPosts";
 
 
 
+
 const Content = (props) => {
   return (<section className="content">
     <Profile />
-    <MyPosts state={props.state} addPost={props.addPost}/>
+    <MyPosts posts={props.profilePage.posts} newPostText={props.profilePage.newPostText} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
   </section>);
 }
 
