@@ -15,7 +15,7 @@ const Sidebar = (props) => {
               </ul>
           </nav>
           <h2 className={s.heading}>Friends</h2>
-          <Friends  state={props.state}/>
+          <Friends  sidebarPage={props.sidebarPage}/>
       </aside>
   );
 }

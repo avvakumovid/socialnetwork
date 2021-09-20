@@ -11,13 +11,13 @@ const Messages = (props) => {
 
     let newMessage = React.createRef();
     let sendMessage = () => {
-        props.sendMessage();
+        props.store.sendMessage();
     }
 
     let updateNewMessageText = () => {
 
         let textMessage = newMessage.current.value;
-        props.updateNewMessageText(textMessage);
+        props.store.updateNewMessageText(textMessage);
     }
 
     return (

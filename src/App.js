@@ -13,10 +13,7 @@ function App(props) {
             <div className="wrapper">
                 <Header/>
                 <Main state={props.state}
-                      addPost={props.addPost}
-                      updateNewPostText={props.updateNewPostText}
-                      sendMessage={props.sendMessage}
-                      updateNewMessageText={props.updateNewMessageText}
+                      store={props.store}
                 />
                 <Footer/>
             </div>
