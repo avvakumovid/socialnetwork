@@ -46,7 +46,7 @@ let state = {
             {message: 'Hi!', senderId: 1, id: 1},
             {message: 'How are you?', senderId: 2, id: 2},
             {message: 'What are you doing?', senderId: 1, id: 3},
-            {message: 'lol 🚀', senderId: 2, id: 3},
+            {message: 'lol 🚀 grid-template-columns:grid-template-columns:grid-template-columns:grid-template-columns:grid-template-columns:grid-template-columns:grid-template-columns:grid-template-columns:grid-template-columns:grid-template-columns:grid-template-columns:grid-template-columns:', senderId: 2, id: 3},
         ],
         newMessageText: 'dd'
 

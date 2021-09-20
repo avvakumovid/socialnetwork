@@ -1,8 +1,6 @@
-
-
 .dialogs {
     display: grid;
-    grid-template-columns: 4fr 10fr;
+    grid-template-columns: 4fr minmax(100px, 10fr);
     grid-template-rows: 0.5fr 1fr 0.2fr;
     grid-template-areas:
             "dialogs messages"
@@ -10,7 +8,9 @@
             "none sends";
 
     font-size: 26px;
-    gap: 20px
+    gap: 20px;
+    word-wrap: break-word;
+
 }
 
 .dialogsItem {
@@ -27,6 +27,8 @@
     );
     padding: 20px;
     border-radius: 25px;
+
+
 }
 .sends {
     grid-area: sends;

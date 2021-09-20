@@ -1,13 +1,41 @@
+.message,
+.myMessage {
+    display: grid;
+    align-items: end;
+    row-gap: 20px;
+
+}
+
 
 .message {
     padding: 0 0 50px 0;
     color: rgba(131, 214, 255, 1);
+    grid-area: text;
+    grid-template-areas: "ava name none"
+                        "text text text";
+    grid-template-columns: minmax(10px, 70px) minmax(10px, 70px) 1fr;
+
+}
+.text{
+    grid-area: text;
+    color: black;
 }
 .avatarImage {
+
+    grid-area: ava;
     width: 70px;
 }
 
 .myMessage {
+    justify-items: end;
+    grid-template-areas: "none name ava"
+                        "text text text";
+    grid-template-columns: 1fr minmax(10px, 70px) minmax(10px, 70px);
     text-align: end;
     color: rgba(233,129,252,1);
+
+}
+
+.name {
+    grid-area: name;
 }
