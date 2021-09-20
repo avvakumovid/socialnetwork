@@ -12,7 +12,12 @@ function App(props) {
         <div className="App">
             <div className="wrapper">
                 <Header/>
-                <Main state={props.state} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
+                <Main state={props.state}
+                      addPost={props.addPost}
+                      updateNewPostText={props.updateNewPostText}
+                      sendMessage={props.sendMessage}
+                      updateNewMessageText={props.updateNewMessageText}
+                />
                 <Footer/>
             </div>
         </div>

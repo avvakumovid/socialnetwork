@@ -47,7 +47,8 @@ let state = {
             {message: 'How are you?', senderId: 2, id: 2},
             {message: 'What are you doing?', senderId: 1, id: 3},
             {message: 'lol 🚀', senderId: 2, id: 3},
-        ]
+        ],
+        newMessageText: 'dd'
 
     },
     sidebarPage: {
@@ -59,7 +60,6 @@ let state = {
     }
 }
 
-window.state = state;
 
 export let addPost = () => {
 
@@ -76,6 +76,22 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let sendMessage = () => {
+    let newMessage = {
+        message: state.messagesPage.newMessageText,
+        senderId: 1,
+        id: 1
+    }
+    state.messagesPage.messages.push(newMessage);
+    state.messagesPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newMessage) => {
+    state.messagesPage.newMessageText = newMessage;
     rerenderEntireTree(state);
 }
 
