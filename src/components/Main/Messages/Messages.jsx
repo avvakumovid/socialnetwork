@@ -11,13 +11,15 @@ const Messages = (props) => {
 
     let newMessage = React.createRef();
     let sendMessage = () => {
-        props.store.sendMessage();
+        let action = {type: 'SEND-MESSAGE'};
+        props.dispatch(action);
     }
 
     let updateNewMessageText = () => {
 
         let textMessage = newMessage.current.value;
-        props.store.updateNewMessageText(textMessage);
+        let action = {type: 'UPDATE-NEW-MESSAGE-TEXT', newMessage: textMessage}
+        props.dispatch(action);
     }
 
     return (

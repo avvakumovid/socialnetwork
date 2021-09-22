@@ -13,10 +13,10 @@ const Main = (props) => {
 
     return (<main className={s.main}>
         <Route path={'/'} render={() => <Sidebar sidebarPage={props.state.sidebarPage}/>}/>
-        <Route path={'/content'} render={() => <Content profilePage={props.state.profilePage} store={props.store}/>} />
+        <Route path={'/content'} render={() => <Content profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
         <Route path={'/messages'} render={() => <Messages
                                                     messagesPage={props.state.messagesPage}
-                                                    store={props.store}
+                                                    dispatch={props.dispatch}
 
         />} />
         <Route path={'/music'} render={() => <Music />} />

@@ -5,19 +5,18 @@ import Footer from "./components/Footer/Footer";
 import {BrowserRouter} from "react-router-dom";
 
 
-
 function App(props) {
     return (
         <BrowserRouter>
-        <div className="App">
-            <div className="wrapper">
-                <Header/>
-                <Main state={props.state}
-                      store={props.store}
-                />
-                <Footer/>
+            <div className="App">
+                <div className="wrapper">
+                    <Header/>
+                    <Main state={props.state}
+                          dispatch={props.dispatch}
+                    />
+                    <Footer/>
+                </div>
             </div>
-        </div>
         </BrowserRouter>
     );
 }

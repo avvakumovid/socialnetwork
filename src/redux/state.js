@@ -63,50 +63,45 @@ let store = {
             ]
         }
     },
+    _callSubscriber() {
+    },
+
     getState() {
         return this._state;
     },
-
-    _callSubscriber()  {
-    },
-
-    addPost() {
-
-        let newPost = {
-            id: 5,
-            src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png',
-            text    :this._state.profilePage.newPostText,
-            likeCount: 0,
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-
-    sendMessage() {
-        let newMessage = {
-            message: this._state.messagesPage.newMessageText,
-            senderId: 1,
-            id: 1
-        }
-        this._state.messagesPage.messages.push(newMessage);
-        this._state.messagesPage.newMessageText = '';
-        this._callSubscriber(this._state);
-    },
-
-    updateNewMessageText(newMessage) {
-        this._state.messagesPage.newMessageText = newMessage;
-        this._callSubscriber(this._state);
-    },
-
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png',
+                text: this._state.profilePage.newPostText,
+                likeCount: 0,
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        } else if (action.type === 'SEND-MESSAGE') {
+            let newMessage = {
+                message: this._state.messagesPage.newMessageText,
+                senderId: 1,
+                id: 1
+            }
+            this._state.messagesPage.messages.push(newMessage);
+            this._state.messagesPage.newMessageText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+            this._state.messagesPage.newMessageText = action.newMessage;
+            this._callSubscriber(this._state);
+        }
     }
+
 
 };
 
