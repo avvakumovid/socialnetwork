@@ -1,3 +1,7 @@
+import profileReducer from './profileReducer';
+import messagesReducer from "./messagesReducer";
+import sidebarReducer from "./sidebarReducer";
+
 const SEND_MESSAGE = 'SEND-MESSAGE';
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 const ADD_POST = 'ADD-POST';
@@ -79,33 +83,11 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: 5,
-                src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png',
-                text: this._state.profilePage.newPostText,
-                likeCount: 0,
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === SEND_MESSAGE) {
-            let newMessage = {
-                message: this._state.messagesPage.newMessageText,
-                senderId: 1,
-                id: 1
-            }
-            this._state.messagesPage.messages.push(newMessage);
-            this._state.messagesPage.newMessageText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._state.messagesPage.newMessageText = action.newMessage;
-            this._callSubscriber(this._state);
-        }
-
+        debugger;
+        this._state.profilePage = profileReducer( this._state.profilePage, action);
+        this._state.messagesPage = messagesReducer( this._state.messagesPage, action);
+        this._state.sidebarPage = sidebarReducer( this._state.sidebarPage, action);
+        this._callSubscriber(this._state);
 
     },
 
