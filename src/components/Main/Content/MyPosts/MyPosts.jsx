@@ -1,7 +1,6 @@
 import s from './MyPosts.module.css'
 import Post from "./Post/Post";
 import React from "react";
-import {addPostActionCreator, onPostChangeActionCreator} from "../../../../redux/actionCreators";
 
 
 
@@ -11,14 +10,12 @@ const MyPosts = (props) => {
 
 
     let addPost = () => {
-        debugger;
-        props.dispatch(addPostActionCreator());
+        props.addPost();
     }
 
     let onPostChange = () => {
-        debugger;
         let text = newTextElement.current.value;
-        props.dispatch(onPostChangeActionCreator(text));
+        props.onPostChange(text);
 
 
     }

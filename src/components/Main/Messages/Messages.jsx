@@ -5,7 +5,6 @@ import DialogItem from "./DialogItem/DialogItem";
 import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../../../redux/actionCreators";
 
 
-
 const Messages = (props) => {
 
     let messages = props.messagesPage.messages.map(m => <Message message={m.message} id={m.id} senderId={m.senderId}/>)
@@ -14,7 +13,7 @@ const Messages = (props) => {
     let newMessage = React.createRef();
 
     let sendMessage = () => {
-        props.dispatch(sendMessageActionCreator());
+        props.sendMessage();
     }
 
     let updateNewMessageText = () => {

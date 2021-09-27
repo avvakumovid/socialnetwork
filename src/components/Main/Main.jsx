@@ -12,13 +12,9 @@ const Main = (props) => {
 
 
     return (<main className={s.main}>
-        <Route path={'/'} render={() => <Sidebar sidebarPage={props.state.sidebarPage}/>}/>
-        <Route path={'/content'} render={() => <Content profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
-        <Route path={'/messages'} render={() => <Messages
-                                                    messagesPage={props.state.messagesPage}
-                                                    dispatch={props.dispatch}
-
-        />} />
+        <Route path={'/'} render={() => <Sidebar sidebarPage={props.store.getState().sidebarPage}/>}/>
+        <Route path={'/content'} render={() => <Content store={props.store}/>} />
+        <Route path={'/messages'} render={() => <Messages store={props.store}/>} />
         <Route path={'/music'} render={() => <Music />} />
         <Route path={'/news'} render={() => <News />} />
         <Route path={'/settings'} render={() => <Settings />} />
