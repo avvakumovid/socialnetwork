@@ -7,8 +7,9 @@ import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../..
 
 const Messages = (props) => {
 
-    let messages = props.messagesPage.messages.map(m => <Message message={m.message} id={m.id} senderId={m.senderId}/>)
-    let dialogs = props.messagesPage.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
+    let messages = props.messages.map(m => <Message message={m.message} id={m.id} senderId={m.senderId}/>)
+    let dialogs = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
+
 
     let newMessage = React.createRef();
 
@@ -16,10 +17,10 @@ const Messages = (props) => {
         props.sendMessage();
     }
 
-    let updateNewMessageText = () => {
+    let onMessageChange = () => {
 
         let textMessage = newMessage.current.value;
-        props.dispatch(updateNewMessageTextActionCreator(textMessage));
+        props.updateNewMessageText(textMessage);
     }
 
     return (
@@ -33,7 +34,7 @@ const Messages = (props) => {
                     {messages}
                 </div>
                 <div className={s.sends}>
-                    <textarea onChange={updateNewMessageText} value={props.messagesPage.newMessageText}
+                    <textarea onChange={onMessageChange} value={props.newMessageText}
                               ref={newMessage}/>
                     <button onClick={sendMessage} className={s.sendsBtn}>Оправить</button>
                 </div>

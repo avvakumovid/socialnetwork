@@ -8,15 +8,18 @@ import Messages from "./Messages";
 
 const MessagesContainer = (props) => {
 
-
+    let state = props.store.getState();
+    let messages = state.messagesPage.messages;
+    let dialogs = state.messagesPage.dialogs;
+    let newMessageText = state.messagesPage.newMessageText;
     let sendMessage = () => {
-        props.dispatch(sendMessageActionCreator());
+        props.store.dispatch(sendMessageActionCreator());
     }
 
     let updateNewMessageText = (textMessage) => {
-        props.dispatch(updateNewMessageTextActionCreator(textMessage));
+        props.store.dispatch(updateNewMessageTextActionCreator(textMessage));
     }
 
-    return ( <Messages sendMessage={sendMessage}  />);
+    return ( <Messages sendMessage={sendMessage}  updateNewMessageText={updateNewMessageText} messages={messages} dialogs={dialogs} newMessageText={newMessageText} />);
 }
 export default MessagesContainer;
