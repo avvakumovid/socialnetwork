@@ -27,20 +27,26 @@ let initialState = {
 const messagesReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case SEND_MESSAGE:
+        case SEND_MESSAGE: {
             let newMessage = {
                 message: state.newMessageText,
                 senderId: 1,
                 id: 1
             }
-            state.messages.push(newMessage);
-            state.newMessageText = '';
+            let copyState = {...state};
+            copyState.messages = [...state.messages];
+            copyState.messages.push(newMessage);
+            copyState.newMessageText = '';
+            return copyState;
+        }
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            let copyState = {...state}
+            copyState.newMessageText = action.newMessage;
+            return copyState;
+        }
+        default: {
             return state;
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageText = action.newMessage;
-            return state;
-        default:
-            return state;
+        }
     }
 }
 
