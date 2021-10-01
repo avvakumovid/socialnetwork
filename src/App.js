@@ -4,14 +4,12 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 
 
-function App(props) {
+function App() {
     return (
         <div className="App">
             <div className="wrapper">
                 <Header/>
-                <Main store={props.store}
-
-                />
+                <Main/>
                 <Footer/>
             </div>
         </div>
