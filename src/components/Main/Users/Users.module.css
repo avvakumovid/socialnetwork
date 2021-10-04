@@ -1,0 +1,40 @@
+.profileImage {
+    width: 100px;
+}
+
+.user {
+    display: grid;
+    color: black;
+    grid-template-columns: 1fr 10fr 10fr;
+    padding: 10px 10px 0 10px;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    width: 100%;
+    border-radius: 25px;
+    border: 2px dashed ;
+}
+
+.image {
+    grid-row: 1/3;
+}
+
+.image img {
+    width: 100px;
+    padding: 0 10px 0 0;
+}
+
+.fullName {
+    grid-column-start: 2;
+}
+
+.loaction {
+    text-align: right;
+}
+
+.btn  {
+    text-align: center;
+}
+.btn button  {
+    text-transform: uppercase;
+    padding: 5px;
+}

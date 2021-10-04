@@ -11,8 +11,13 @@
 .image {
     opacity: 0.9;
     padding: 0 0 50px 0;
+
 }
 
+.avatar img,
+.image {
+    max-width: 100%;
+}
 
 
 .description ul {
