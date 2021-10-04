@@ -8,7 +8,7 @@ const sidebarReducer = (state = initialState, action) => {
     switch (action.type){
         default:
             let copyState = {...state}
-            return copyState;
+            return state;
     }
 }
 

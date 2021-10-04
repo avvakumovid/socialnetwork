@@ -20,7 +20,7 @@ let initialState = {
             id: 3
         },
     ],
-    newMessageText: 'dd'
+    newMessageText: ''
 
 };
 
@@ -33,16 +33,17 @@ const messagesReducer = (state = initialState, action) => {
                 senderId: 1,
                 id: 1
             }
-            let copyState = {...state};
-            copyState.messages = [...state.messages];
-            copyState.messages.push(newMessage);
-            copyState.newMessageText = '';
-            return copyState;
+            return {
+                ...state,
+                messages: [...state.messages, newMessage],
+                newMessageText: '',
+            };
         }
         case UPDATE_NEW_MESSAGE_TEXT: {
-            let copyState = {...state}
-            copyState.newMessageText = action.newMessage;
-            return copyState;
+            return {
+                ...state,
+                newMessageText: action.newMessage,
+            };
         }
         default: {
             return state;
