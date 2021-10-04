@@ -4,6 +4,7 @@ const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET_USERS';
 
 export const sendMessageActionCreator = () => ({type: SEND_MESSAGE});
 export const updateNewMessageTextActionCreator = (textMessage) => ({
@@ -18,5 +19,6 @@ export const onPostChangeActionCreator = (text) => ({
     newText: text
 });
 
-export const followAC = (userid) => ({type: FOLLOW, userid: userid});
-export const unfollowAC = (userid) => ({type: UNFOLLOW, userid: userid});
+export const followAC = (userid) => ({type: FOLLOW, userid});
+export const unfollowAC = (userid) => ({type: UNFOLLOW, userid});
+export const setUsersAC = (users) => ({type: SET_USERS, users});
