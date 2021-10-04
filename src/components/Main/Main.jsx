@@ -11,7 +11,6 @@ import Users from "./Users/Users";
 
 const Main = (props) => {
 
-
     return (<main className={s.main}>
         <Route path={'/'} render={() => <SidebarContainer />}/>
         <Route path={'/content'} render={() => <Content />} />
