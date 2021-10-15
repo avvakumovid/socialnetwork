@@ -1,31 +1,36 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+
 
 let initialState = {
-    users: [
-        ]
+    users: [],
+    pageSize: 5,
+    totalUserCount: 0,
+    currentPage: 1
 };
 
 const sidebarReducer = (state = initialState, action) => {
-    debugger;
-    switch (action.type){
+
+    switch (action.type) {
 
         case FOLLOW:
             return {
                 ...state,
-                users: state.users.map( u => {
-                    if(u.id === action.userid) {
+                users: state.users.map(u => {
+                    if (u.id === action.userid) {
                         u.followed = true;
                     }
                     return u;
                 })
             }
-            case UNFOLLOW:
+        case UNFOLLOW:
             return {
                 ...state,
-                users: state.users.map( u => {
-                    if(u.id === action.userid) {
+                users: state.users.map(u => {
+                    if (u.id === action.userid) {
                         u.followed = false;
                     }
                     return u;
@@ -34,8 +39,16 @@ const sidebarReducer = (state = initialState, action) => {
         case SET_USERS:
             return {
                 ...state,
-                users: [...state.users, ...action.users]
+                users: [...action.users]
             }
+        case SET_USERS_TOTAL_COUNT: return {
+            ...state,
+            totalUserCount: action.count,
+        }
+        case SET_CURRENT_PAGE: return {
+            ...state,
+            currentPage: action.page
+        }
         default:
             let copyState = {...state}
             return state;
