@@ -1,6 +1,6 @@
 import s from './Profile.module.css'
 
-const Profile = (props) => {
+const ProfileInfo = (props) => {
   return (<section>
       <div>
           <img className={s.image} src="https://www.ejin.ru/wp-content/uploads/2017/09/15-594.jpg" alt=""/>
@@ -22,4 +22,4 @@ const Profile = (props) => {
   </section>);
 }
 
-export default Profile;
+export default ProfileInfo;

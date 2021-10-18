@@ -1,5 +1,6 @@
 import style from "./Users.module.css";
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 const Users = (props) => {
     let pageCount = Math.ceil(props.totalUserCount / props.pageSize)
@@ -18,9 +19,9 @@ const Users = (props) => {
         </div>
         {props.users.map(u => {
             return <div className={style.user}>
-                <div className={style.image}><img className={style.profileImage}
+                <div className={style.image}><NavLink to={'/profile/'+ u.id}><img className={style.profileImage}
                                                   src={u.photos.small ?? 'https://cdn-icons-png.flaticon.com/512/1658/1658753.png'}
-                                                  alt={'ava'}/></div>
+                                                  alt={'ava'}/></NavLink></div>
                 <div className={style.fullName}>{u.name} {u.lastName}</div>
                 <div className={style.loaction}>{u.loaction?.country ?? 'Country'}</div>
                 <div>{u.status}</div>

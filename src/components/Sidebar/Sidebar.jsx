@@ -7,7 +7,7 @@ const Sidebar = (props) => {
       <aside className={s.sidebar}>
           <nav className={s.menu}>
               <ul className={s.list}>
-                  <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370554.png'} link={'/content'} name={'Profile'}/>
+                  <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370554.png'} link={'/profile'} name={'Profile'}/>
                   <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370958.png'} link={'/messages'} name={"Messages"}/>
                   <Sidebaritem src={'https://cdn-icons-png.flaticon.com/512/1370/1370992.png'} link={'/users'} name={'Users'}/>
                   <Sidebaritem src={'https://image.flaticon.com/icons/png/512/1370/1370573.png'} link={'/news'} name={'News'}/>

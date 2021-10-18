@@ -1,5 +1,5 @@
 import s from './Main.module.css';
-import Content from "./Content/Content";
+import Profile from "./Content/Profile";
 import Music from "./Music/Music";
 import News from "./News/News";
 import Settings from "./Settings/Settings";
@@ -13,7 +13,7 @@ const Main = (props) => {
 
     return (<main className={s.main}>
         <Route path={'/'} render={() => <SidebarContainer />}/>
-        <Route path={'/content'} render={() => <Content />} />
+        <Route path={'/profile'} render={() => <Profile />} />
         <Route path={'/messages'} render={() => <MessagesContainer />} />
         <Route path={'/users'} render={() => <UsersContainer />} />
         <Route path={'/music'} render={() => <Music />} />

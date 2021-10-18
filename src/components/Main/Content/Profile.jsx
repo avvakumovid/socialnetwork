@@ -1,15 +1,13 @@
 
-import Profile from "./Profile/Profile";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
-
-
-const Content = (props) => {
+const Profile = (props) => {
   return (<section className="content">
-    <Profile />
+    <ProfileInfo />
     <MyPostsContainer />
   </section>);
 }
 
-export default Content;
+export default Profile;
