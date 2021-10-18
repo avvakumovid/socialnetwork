@@ -22,10 +22,10 @@ export const onPostChangeActionCreator = (text) => ({
     newText: text
 });
 
-export const followAC = (userid) => ({type: FOLLOW, userid});
-export const unfollowAC = (userid) => ({type: UNFOLLOW, userid});
-export const setUsersAC = (users) => ({type: SET_USERS, users});
-export const setTotalUserCountAC = (count) => ({type: SET_USERS_TOTAL_COUNT, count})
-export const setCurrentPageAC = (page) => ({type: SET_CURRENT_PAGE, page})
-export const toggleIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
+export const follow = (userid) => ({type: FOLLOW, userid});
+export const unfollow = (userid) => ({type: UNFOLLOW, userid});
+export const setUsers = (users) => ({type: SET_USERS, users});
+export const setTotalUserCount = (count) => ({type: SET_USERS_TOTAL_COUNT, count})
+export const setCurrentPage = (page) => ({type: SET_CURRENT_PAGE, page})
+export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
