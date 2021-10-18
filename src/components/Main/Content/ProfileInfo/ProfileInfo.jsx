@@ -1,7 +1,10 @@
 import s from './Profile.module.css'
+import Preloader from "../../../common/Preloader/Preloader";
 
 const ProfileInfo = (props) => {
-    debugger;
+    if(!props.userProfile){
+        return <Preloader/>
+    }
   return (<section>
       <div>
           <img className={s.image} src="https://www.ejin.ru/wp-content/uploads/2017/09/15-594.jpg" alt=""/>
@@ -11,7 +14,7 @@ const ProfileInfo = (props) => {
               <img src="https://image.flaticon.com/icons/png/512/5188/5188670.png" alt=""/>
           </div>
           <div className={s.description}>
-              <img alt={'ava'} src=/>
+              <img alt={'ava'} src={props.userProfile.photos.large}/>
               <h2>Ivan Avvakumov</h2>
               <ul>
                   <li>Date of birthday: 11.09.1997</li>
