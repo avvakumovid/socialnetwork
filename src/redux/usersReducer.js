@@ -3,16 +3,18 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 
 let initialState = {
     users: [],
     pageSize: 5,
     totalUserCount: 1,
-    currentPage: 1
+    currentPage: 1,
+    isFetching: false
 };
 
-const sidebarReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
 
     switch (action.type) {
 
@@ -49,10 +51,14 @@ const sidebarReducer = (state = initialState, action) => {
             ...state,
             currentPage: action.page
         }
+        case TOGGLE_IS_FETCHING: return {
+            ...state,
+            isFetching: action.isFetching
+        }
         default:
             let copyState = {...state}
             return state;
     }
 }
 
-export default sidebarReducer;
+export default userReducer;

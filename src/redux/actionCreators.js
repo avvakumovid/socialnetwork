@@ -7,6 +7,7 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 export const sendMessageActionCreator = () => ({type: SEND_MESSAGE});
 export const updateNewMessageTextActionCreator = (textMessage) => ({
@@ -26,4 +27,5 @@ export const unfollowAC = (userid) => ({type: UNFOLLOW, userid});
 export const setUsersAC = (users) => ({type: SET_USERS, users});
 export const setTotalUserCountAC = (count) => ({type: SET_USERS_TOTAL_COUNT, count})
 export const setCurrentPageAC = (page) => ({type: SET_CURRENT_PAGE, page})
+export const toggleIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
