@@ -7,13 +7,14 @@ import {Route} from "react-router-dom";
 import MessagesContainer from "./Messages/MessagesContainer";
 import SidebarContainer from "../Sidebar/SidebarContainer";
 import UsersContainer from "./Users/UsersContainer";
+import ProfileContainer from "./Content/ProfileContainer";
 
 
 const Main = (props) => {
 
     return (<main className={s.main}>
         <Route path={'/'} render={() => <SidebarContainer />}/>
-        <Route path={'/profile'} render={() => <Profile />} />
+        <Route path={'/profile'} render={() => <ProfileContainer />} />
         <Route path={'/messages'} render={() => <MessagesContainer />} />
         <Route path={'/users'} render={() => <UsersContainer />} />
         <Route path={'/music'} render={() => <Music />} />
