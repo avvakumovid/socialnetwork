@@ -8,7 +8,7 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 let initialState = {
     users: [],
     pageSize: 5,
-    totalUserCount: 0,
+    totalUserCount: 1,
     currentPage: 1
 };
 
