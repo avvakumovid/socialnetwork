@@ -62,30 +62,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userid) => {
-//             dispatch(followAC(userid));
-//         },
-//         unfollow: (userid) => {
-//             dispatch(unfollowAC(userid));
-//         },
-//         setUser: (users) => {
-//             dispatch(setUsersAC(users))
-//         },
-//         setTotalUserCount: (count) => {
-//             dispatch(setTotalUserCountAC(count));
-//         },
-//         setCurrentPage: (page) => {
-//             dispatch(setCurrentPageAC(page))
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAC(isFetching))
-//         }
-//     }
-//
-// }
-
 const UsersContainer = connect(mapStateToProps, {follow, unfollow, setUsers,setTotalUserCount,setCurrentPage,toggleIsFetching})(UsersComponent);
 
 export default UsersContainer;
