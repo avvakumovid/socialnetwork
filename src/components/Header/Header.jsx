@@ -5,8 +5,8 @@ import {NavLink} from "react-router-dom";
 const Header = (props) => {
     return (
         <header className={s.header}>
-            <NavLink to={'/content'} className={s.logo}></NavLink>
-            <Menu/>
+            <NavLink to={'/content'} className={s.logo}/>
+            <Menu data={props}/>
         </header>
     );
 }
