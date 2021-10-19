@@ -34,7 +34,7 @@ const Users = (props) => {
                                 axios.delete('https://social-network.samuraijs.com/api/1.0/follow/' + u.id, {
                                     withCredentials: true,
                                     headers: {
-                                        "API-KEY": "'ce337ba-02de-4e77-8953-4a9f30453a39"
+                                        "API-KEY": "902f3130-1dae-4590-801e-6de464903c83"
                                     }
                                 }.then(response => {
                                     if (response.data.resultCode === 0) {
@@ -48,7 +48,7 @@ const Users = (props) => {
                                 axios.post('https://social-network.samuraijs.com/api/1.0/follow/' + u.id, {}, {
                                     withCredentials: true,
                                     headers: {
-                                        "API-KEY": "'ce337ba-02de-4e77-8953-4a9f30453a39"
+                                        "API-KEY": "902f3130-1dae-4590-801e-6de464903c83"
                                     }
                                 }).then(response => {
                                     debugger;
