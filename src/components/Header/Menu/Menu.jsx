@@ -1,14 +1,11 @@
 import s from './Menu.module.css';
 import MenuItem from "./MenuItem/MenuItem";
+import {NavLink} from "react-router-dom";
 
 const Menu = (props) => {
     return (<nav className={s.menu}>
         <ul className={s.list}>
-            {/*<MenuItem name={""}/>*/}
-            {/*<MenuItem name={""}/>*/}
-            {/*<MenuItem name={""}/>*/}
-            <MenuItem data={props.data} name={""}/>
-
+            {props.data.isAuth ?  <MenuItem data={props.data} name={""}/> : <NavLink className={s.login} to={'/login'}>LOGIN</NavLink> }
         </ul>
     </nav>);
 }

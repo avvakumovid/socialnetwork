@@ -4,22 +4,22 @@ import {connect} from "react-redux";
 import {auth, setUserData} from "../../redux/authReducer";
 
 
-
-class HeaderContainer extends React.Component{
+class HeaderContainer extends React.Component {
     componentDidMount() {
         this.props.auth();
     }
 
     render() {
-       return <Header {...this.props}/>
+        return <Header {...this.props}/>
     }
 }
 
 let mapStateToProps = (state) => {
     return {
-      userId: state.auth.userId,
-      login: state.auth.login,
-      email: state.auth.email,
+        userId: state.auth.userId,
+        login: state.auth.login,
+        email: state.auth.email,
+        isAuth: state.auth.isAuth,
     }
 }
 
