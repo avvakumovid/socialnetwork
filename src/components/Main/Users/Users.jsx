@@ -1,8 +1,6 @@
 import style from "./Users.module.css";
 import React from "react";
 import {NavLink} from "react-router-dom";
-import axios from "axios";
-import {SubscribeAPI} from "../../../API/API";
 
 const Users = (props) => {
     let pageCount = Math.ceil(props.totalUserCount / props.pageSize)
@@ -31,29 +29,31 @@ const Users = (props) => {
                 <div className={style.loaction}>{u.loaction?.city ?? 'City'}</div>
                 <div className={style.btn}>
                     {u.followed ? <button disabled={props.followingInProgress.some(id => id === u.id)}
-                            onClick={() => {
-                                props.toggleFollowingInProgress(true, u.id)
-                                SubscribeAPI.follow(u.id).then(response => {
-                                    if (response.resultCode === 0) {
-                                        props.unfollow(u.id)
-                                    }
-                                    props.toggleFollowingInProgress(false,  u.id)
-                                })
+                                          onClick={() => {
+                                              props.unfollowing(u.id)
+                                              // props.toggleFollowingInProgress(true, u.id)
+                                              // SubscribeAPI.unfollow(u.id).then(response => {
+                                              //     if (response.resultCode === 0) {
+                                              //         props.unfollow(u.id)
+                                              //     }
+                                              //     props.toggleFollowingInProgress(false,  u.id)
+                                              // })
 
-                            }}>Unfollow</button> :
+                                          }}>Unfollow</button> :
                         <button disabled={props.followingInProgress.some(id => id === u.id)}
-                            onClick={() => {
-                                props.toggleFollowingInProgress(true,  u.id)
-                                SubscribeAPI.unfollow(u.id).then(response => {
-                                        if (response.resultCode === 0) {
-                                            props.follow(u.id)
-                                        }
-                                    props.toggleFollowingInProgress(false,  u.id)
-                                    }
-                                )
+                                onClick={() => {
+                                    props.following(u.id)
+                                    // props.toggleFollowingInProgress(true,  u.id)
+                                    // SubscribeAPI.follow(u.id).then(response => {
+                                    //         if (response.resultCode === 0) {
+                                    //             props.follow(u.id)
+                                    //         }
+                                    //     props.toggleFollowingInProgress(false,  u.id)
+                                    //     }
+                                    // )
 
-                            }
-                            }>Follow</button>}
+                                }
+                                }>Follow</button>}
                 </div>
 
             </div>

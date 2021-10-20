@@ -2,7 +2,7 @@ import s from './Profile.module.css'
 import Preloader from "../../../common/Preloader/Preloader";
 
 const ProfileInfo = (props) => {
-    if(!props.userProfile){
+        if(!props.userProfile){
         return <Preloader/>
     }
   return (<section>
