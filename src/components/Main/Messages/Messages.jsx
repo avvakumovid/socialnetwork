@@ -7,8 +7,6 @@ import {Redirect} from "react-router-dom";
 
 
 const Messages = (props) => {
-
-    if(!props.isAuth) return <Redirect to={'/login'}/>
     let messages = props.messages.map(m => <Message message={m.message} id={m.id} senderId={m.senderId}/>)
     let dialogs = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
 
