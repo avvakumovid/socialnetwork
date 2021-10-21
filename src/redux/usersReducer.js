@@ -104,7 +104,7 @@ export const following = (id) => {
     return (dispatch) => {
         dispatch(toggleFollowingInProgress(true, id))
         SubscribeAPI.follow(id).then(response => {
-            debugger;
+
                 if (response.resultCode === 0) {
                     dispatch(follow(id))
                 }
