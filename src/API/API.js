@@ -24,6 +24,14 @@ export class ProfileAPI extends BaseAPI {
         return this.instance.get(`/profile/${userId}`)
             .then(response => response.data)
     }
+    static getStatus = (userId) => {
+        return this.instance.get(`/status/${userId}`)
+            .then(response => response.data)
+    }
+    static updateStatus = (userId) => {
+        return this.instance.get(`/status/${userId}`)
+            .then(response => response.data)
+    }
 }
 
 export class SubscribeAPI extends BaseAPI {
