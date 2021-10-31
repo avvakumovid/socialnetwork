@@ -25,18 +25,19 @@ export class ProfileAPI extends BaseAPI {
             .then(response => response.data)
     }
     static getStatus = (userId) => {
-        return this.instance.get(`/status/${userId}`)
+        return this.instance.get(`/profile/status/${userId}`)
             .then(response => response.data)
     }
-    static updateStatus = (userId) => {
-        return this.instance.get(`/status/${userId}`)
-            .then(response => response.data)
+    static updateStatus = (status) => {
+        return this.instance.put(`/profile/status/`, {
+            status
+        })
     }
 }
 
 export class SubscribeAPI extends BaseAPI {
     static unfollow = (id) => {
-       return this.instance.delete('follow/' + id).then(response => response.data)
+        return this.instance.delete('follow/' + id).then(response => response.data)
     }
     static follow = (id) => {
         return this.instance.post('follow/' + id).then(response => response.data)
@@ -45,6 +46,6 @@ export class SubscribeAPI extends BaseAPI {
 
 export class AuthAPI extends BaseAPI {
     static authMe = () => {
-      return this.instance.get('auth/me').then(response => response.data)
+        return this.instance.get('auth/me').then(response => response.data)
     }
 }
