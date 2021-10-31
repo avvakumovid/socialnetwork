@@ -84,6 +84,9 @@ export const setUserProfile = (userProfile) => ({
 export const setStatus = (status) => ({
     type: SET_USER_PROFILE, status
 })
+export const setUserStatus = (status) => ({
+    type: SET_USER_PROFILE, status
+})
 
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const onPostChangeActionCreator = (text) => ({
@@ -107,11 +110,20 @@ export const getStatus = (userId) => {
     }
 }
 
-export const updateStatus = (status) => {
+export const getUserStatus = (userId) => {
+    return (dispatch) => {
+        ProfileAPI.getStatus(userId).then(response => {
+            dispatch(setUserStatus(response))
+        })
+    }
+}
+
+export const updateUserStatus = (status) => {
+    debugger
     return (dispatch) => {
         ProfileAPI.updateStatus(status).then(response => {
             if(response.resultCode === 0){
-                dispatch(setStatus(status))
+                dispatch(setUserStatus(status))
             }
         })
     }

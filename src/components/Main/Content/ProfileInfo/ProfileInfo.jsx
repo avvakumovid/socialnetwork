@@ -3,20 +3,18 @@ import Preloader from "../../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
 
 
+
 const ProfileInfo = (props) => {
         if(!props.userProfile){
         return <Preloader/>
     }
   return (<section>
-      <div>
-          {/*<img className={s.image} src="https://www.ejin.ru/wp-content/uploads/2017/09/15-594.jpg" alt=""/>*/}
-      </div>
       <div className={s.profile}>
           {/*<div className={s.avatar}><img src="https://image.flaticon.com/icons/png/512/5188/5188670.png" alt=""/>*/}
           {/*</div>*/}
           <div className={s.description}>
               <img className={s.avatar} alt={'ava'} src={props.userProfile.photos.large ?? 'https://image.flaticon.com/icons/png/512/5188/5188670.png'}/>
-              <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+              <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
               <h2>{props.userProfile.fullName}</h2>
               <ul>
                   <li>Description: {props.userProfile.aboutMe}</li>
