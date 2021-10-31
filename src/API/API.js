@@ -25,12 +25,13 @@ export class ProfileAPI extends BaseAPI {
             .then(response => response.data)
     }
     static getStatus = (userId) => {
+        debugger
         return this.instance.get(`/profile/status/${userId}`)
             .then(response => response.data)
     }
     static updateStatus = (status) => {
-        return this.instance.put(`/profile/status/`, {
-            status
+        return this.instance.put(`/profile/status`, {
+            status: status
         })
     }
 }
@@ -46,6 +47,6 @@ export class SubscribeAPI extends BaseAPI {
 
 export class AuthAPI extends BaseAPI {
     static authMe = () => {
-        return this.instance.get('auth/me').then(response => response.data)
+        return this.instance.get('auth/me')
     }
 }
