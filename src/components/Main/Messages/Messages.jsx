@@ -2,26 +2,16 @@ import s from './Messages.module.css'
 import Message from "./Message/Message";
 import React from "react";
 import DialogItem from "./DialogItem/DialogItem";
-
+import MessageReduxForm from "./MessageForm";
 
 
 const Messages = (props) => {
     let messages = props.messages.map(m => <Message message={m.message} id={m.id} senderId={m.senderId}/>)
     let dialogs = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
-
-
-    let newMessage = React.createRef();
-
-    let sendMessage = () => {
-        props.sendMessage();
+    const onSubmit = (formData) => {
+        debugger
+      props.sendMessage(formData.messageText)
     }
-
-    let onMessageChange = () => {
-
-        let textMessage = newMessage.current.value;
-        props.updateNewMessageText(textMessage);
-    }
-
     return (
         <div>
             <h2 className={s.heading}>Messages</h2>
@@ -33,9 +23,7 @@ const Messages = (props) => {
                     {messages}
                 </div>
                 <div className={s.sends}>
-                    <textarea onChange={onMessageChange} value={props.newMessageText}
-                              ref={newMessage}/>
-                    <button onClick={sendMessage} className={s.sendsBtn}>Оправить</button>
+                    <MessageReduxForm onSubmit={onSubmit}/>
                 </div>
             </div>
         </div>

@@ -47,4 +47,8 @@ export class AuthAPI extends BaseAPI {
     static authMe = () => {
       return this.instance.get('auth/me').then(response => response.data)
     }
+    static login = (email, password, rememberMe = false) => {
+        return this.instance.post('auth/login', {email, password, rememberMe} ).then(response => response.data)
+    }
 }
+
