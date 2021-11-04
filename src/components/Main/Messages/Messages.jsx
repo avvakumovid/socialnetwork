@@ -9,8 +9,7 @@ const Messages = (props) => {
     let messages = props.messages.map(m => <Message message={m.message} id={m.id} senderId={m.senderId}/>)
     let dialogs = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
     const onSubmit = (formData) => {
-        debugger
-      props.sendMessage(formData.messageText)
+        props.sendMessage(formData.messageText)
     }
     return (
         <div>

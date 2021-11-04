@@ -45,19 +45,13 @@ const profileReducer = (state = initialState, action) => {
             let newPost = {
                 id: 5,
                 src: 'https://image.flaticon.com/icons/png/512/2077/2077407.png',
-                text: state.newPostText,
+                text: action.newPostText,
                 likeCount: 0,
             };
             return {
                 ...state,
                 posts: [...state.posts, newPost],
-                newPostText: '',
-            };
-        }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText,
+
             };
         }
         case SET_USER_PROFILE: {
@@ -85,11 +79,7 @@ export const setStatus = (status) => ({
     type: SET_STATUS, status
 })
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const onPostChangeActionCreator = (text) => ({
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text
-});
+export const addPostActionCreator = (newPostText) => ({type: ADD_POST, newPostText});
 
 export const getProfile = (userId) => {
     return (dispatch) => {

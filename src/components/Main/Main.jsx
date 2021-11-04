@@ -1,5 +1,4 @@
 import s from './Main.module.css';
-import Profile from "./Content/Profile";
 import Music from "./Music/Music";
 import News from "./News/News";
 import Settings from "./Settings/Settings";
