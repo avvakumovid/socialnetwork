@@ -1,5 +1,5 @@
 import s from './Post.module.css'
-
+import React from 'react';
 const Post = (props) => {
     return (<div className={s.post}>
         <div className={s.image}><img src={props.src}  alt=""/></div>

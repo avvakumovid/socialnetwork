@@ -1,3 +1,4 @@
+import React from 'react';
 import {Field, reduxForm} from "redux-form";
 import style from './Login.module.css'
 import {AuthAPI} from "../../../API/API";

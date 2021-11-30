@@ -8,7 +8,7 @@ import SidebarContainer from "../Sidebar/SidebarContainer";
 import UsersContainer from "./Users/UsersContainer";
 import ProfileContainer from "./Content/ProfileContainer";
 import Login from "./Login/Login";
-
+import React from 'react';
 
 const Main = (props) => {
 

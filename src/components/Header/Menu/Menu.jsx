@@ -1,7 +1,7 @@
 import s from './Menu.module.css';
 import MenuItem from "./MenuItem/MenuItem";
 import {NavLink} from "react-router-dom";
-
+import React from 'react';
 const Menu = (props) => {
     return (<nav className={s.menu}>
         <ul className={s.list}>

@@ -1,5 +1,5 @@
 import s from './Footer.module.css'
-
+import React from 'react';
 const Footer = (props) => {
   return ( <footer className={s.footer}>
       <div className={s.copy}>Copy, 2021</div>

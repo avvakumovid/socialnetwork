@@ -3,13 +3,14 @@ import Post from "./Post/Post";
 import React from "react";
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../../utils/validators/validators";
+import {Textarea} from "../../../common/FormsControls/Textarea";
 
 const maxLength = maxLengthCreator(10);
 const NewPostForm = (props) => {
 
     return (
         <form onSubmit={props.handleSubmit} className={s.newPost}>
-            <Field component={'textarea'} name={'newPostText'} value={props.newPostText} className={s.newPostText}
+            <Field component={Textarea} name={'newPostText'} value={props.newPostText} className={s.newPostText}
                    rows="5"  validate={[required, maxLength]}/>
             <button className={s.sendBtn}>Send</button>
         </form>

@@ -1,7 +1,7 @@
 import s from './Sidebar.module.css';
 import Sidebaritem from "./SideBarItem/Sidebaritem";
 import Friends from "./Friends/Friends";
-
+import React from 'react';
 const Sidebar = (props) => {
   return(
       <aside className={s.sidebar}>
