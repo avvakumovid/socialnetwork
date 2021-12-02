@@ -19,3 +19,9 @@
 .login {
     color: white;
 }
+.logout{
+    padding: 10px;
+    background-color: rgba(131, 214, 255, 1);
+    color: white;
+    margin-left: 20px;
+}

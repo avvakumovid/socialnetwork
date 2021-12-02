@@ -50,5 +50,8 @@ export class AuthAPI extends BaseAPI {
     static login = (email, password, rememberMe = false) => {
         return this.instance.post('auth/login', {email, password, rememberMe} ).then(response => response.data)
     }
+    static logout = () => {
+        return this.instance.delete('auth/login' ).then(response => response.data)
+    }
 }
 
