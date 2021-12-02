@@ -35,4 +35,14 @@ export const auth = () => {
         })
     }
 }
+export const login = (email, password, rememberMe) => {
+    return (dispatch) => {
+        AuthAPI.login(email, password, rememberMe).then(response => {
+            if (response.resultCode === 0) {
+                dispatch(auth());
+            }
+        })
+
+    }
+}
 export default authReducer;
