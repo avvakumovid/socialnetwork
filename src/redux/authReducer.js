@@ -26,16 +26,14 @@ let authReducer = (state = initialState, action) => {
 }
 
 export const setUserData = (userId, login, email, isAuth) => ({type: SET_USER_DATA, data: {userId, login, email, isAuth}});
-export const auth = () => {
-    return (dispatch) => {
-            AuthAPI.authMe().then((response) => {
-
+export const auth = () =>
+     (dispatch) => {
+         return AuthAPI.authMe().then((response) => {
             if(response.resultCode===0){
                dispatch(setUserData(response.data.id, response.data.login, response.data.email, true));
             }
 
         })
-    }
 }
 export const login = (email, password, rememberMe) => {
 
