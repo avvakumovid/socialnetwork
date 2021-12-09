@@ -13,7 +13,7 @@ class BaseAPI {
 
 export class UsersAPI extends BaseAPI {
 
-    static getUsers = (currentPage, pageSize) => {
+    static requestUser = (currentPage, pageSize) => {
         return this.instance.get(`users?page=${currentPage}&count=${pageSize}`).then(respone => respone.data)
 
     }
