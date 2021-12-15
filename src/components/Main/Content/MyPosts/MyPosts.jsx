@@ -11,14 +11,14 @@ const NewPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={s.newPost}>
             <Field component={Textarea} name={'newPostText'} value={props.newPostText} className={s.newPostText}
-                   rows="5"  validate={[required, maxLength]}/>
+                   rows="5" validate={[required, maxLength]}/>
             <button className={s.sendBtn}>Send</button>
         </form>
     )
 }
 const NewPostReduxForm = reduxForm({form: 'newPost'})(NewPostForm)
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => {
 
     const addPost = (value) => {
         props.addPost(value.newPostText);
@@ -34,6 +34,6 @@ const MyPosts = (props) => {
             {posts}
         </section>
     );
-}
+})
 
 export default MyPosts;
