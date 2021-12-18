@@ -13,45 +13,51 @@ class BaseAPI {
 
 export class UsersAPI extends BaseAPI {
 
-    static requestUser = (currentPage, pageSize) => {
-        return this.instance.get(`users?page=${currentPage}&count=${pageSize}`).then(respone => respone.data)
+    static requestUser = async (currentPage, pageSize) => {
+        let response = await this.instance.get(`users?page=${currentPage}&count=${pageSize}`)
+        return response.data
 
     }
 }
 
 export class ProfileAPI extends BaseAPI {
-    static getProfile = (userId) => {
-        return this.instance.get(`/profile/${userId}`)
-            .then(response => response.data)
+    static getProfile = async (userId) => {
+        let response = await this.instance.get(`/profile/${userId}`)
+        return response.data;
     }
-    static getStatus = (userId) => {
-        return this.instance.get(`/profile/status/${userId}`)
-            .then(response => response.data)
+    static getStatus = async (userId) => {
+        let response = await this.instance.get(`/profile/status/${userId}`)
+        return response.data;
     }
-    static updateStatus = (status) => {
-        return this.instance.put(`/profile/status`, {status})
-            .then(response => response.data)
+    static updateStatus = async (status) => {
+        let response = await this.instance.put(`/profile/status`, {status})
+        return response.data;
     }
 }
 
 export class SubscribeAPI extends BaseAPI {
-    static unfollow = (id) => {
-       return this.instance.delete('follow/' + id).then(response => response.data)
+    static unfollow = async (id) => {
+        let response = await this.instance.delete('follow/' + id)
+        return response.data;
     }
-    static follow = (id) => {
-        return this.instance.post('follow/' + id).then(response => response.data)
+    static follow = async (id) => {
+        let response = await this.instance.post('follow/' + id)
+        return response.data
     }
 }
 
 export class AuthAPI extends BaseAPI {
-    static authMe = () => {
-      return this.instance.get('auth/me').then(response => response.data)
+    static authMe = async () => {
+        let response = await this.instance.get('auth/me')
+        return response.data
     }
-    static login = (email, password, rememberMe = false) => {
-        return this.instance.post('auth/login', {email, password, rememberMe} ).then(response => response.data)
+    static login = async (email, password, rememberMe = false) => {
+        let response = await this.instance.post('auth/login', {email, password, rememberMe})
+        return response.data
     }
-    static logout = () => {
-        return this.instance.delete('auth/login' ).then(response => response.data)
+    static logout = async () => {
+        let response = await this.instance.delete('auth/login')
+        return  response.data
     }
 }
 

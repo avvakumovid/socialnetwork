@@ -88,29 +88,29 @@ export const toggleFollowingInProgress = (isFetching, userId) => ({
 })
 
 export const requestUsers = (currentPage, pageSize) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(toggleIsFetching(true))
-        UsersAPI.requestUser(currentPage, pageSize).then(response => {
-            dispatch(setCurrentPage(currentPage))
-            dispatch(toggleIsFetching(false))
-            dispatch(setUsers(response.items))
-            dispatch(setTotalUserCount(response.totalCount))
-        })
+        let response = await UsersAPI.requestUser(currentPage, pageSize)
+        dispatch(setCurrentPage(currentPage))
+        dispatch(toggleIsFetching(false))
+        dispatch(setUsers(response.items))
+        dispatch(setTotalUserCount(response.totalCount))
+
 
     }
 }
 
 export const following = (id) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(toggleFollowingInProgress(true, id))
-        SubscribeAPI.follow(id).then(response => {
+        let response = await SubscribeAPI.follow(id)
 
-                if (response.resultCode === 0) {
-                    dispatch(follow(id))
-                }
-                dispatch(toggleFollowingInProgress(false, id))
-            }
-        )
+        if (response.resultCode === 0) {
+            dispatch(follow(id))
+        }
+        dispatch(toggleFollowingInProgress(false, id))
+
+
     }
 }
 
