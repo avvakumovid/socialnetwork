@@ -1,23 +1,18 @@
 import style from "./Users.module.css";
 import React from "react";
 import {NavLink} from "react-router-dom";
+import Paginator from "../../common/Paginator/Paginator";
 
-const Users = (props) => {
-    let pageCount = Math.ceil(props.totalUserCount / props.pageSize)
+const Users = ({currentPage, setCurrentPage, totalUserCount, pageSize,  ...props}) => {
 
-    let pages = [];
-    for (let i = 1; i <= pageCount; i++) {
-        pages.push(i);
-    }
-
-    pageCount = 5;
     return (<div>
-        <div>{pages.map(p => {
-            return <span onClick={() => {
-                props.setCurrentPage(p)
-            }} className={p === props.currentPage && style.selectdePage}>{p}</span>
-        })}
-        </div>
+        {/*<div>{pages.map(p => {*/}
+        {/*    return <span onClick={() => {*/}
+        {/*        props.setCurrentPage(p)*/}
+        {/*    }} className={p === props.currentPage && style.selectdePage}>{p}</span>*/}
+        {/*})}*/}
+        {/*</div>*/}
+        <Paginator currentPage={currentPage} setCurrentPage={setCurrentPage} totalUserCount={totalUserCount} pageSize={pageSize}/>
         {props.users.map(u => {
             return <div className={style.user}>
                 <div className={style.image}><NavLink to={'/profile/' + u.id}><img className={style.profileImage}
