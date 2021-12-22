@@ -1,7 +1,6 @@
 import style from "./Users.module.css";
 import React from "react";
 import {NavLink} from "react-router-dom";
-import Paginator from "../../common/Paginator/Paginator";
 
 const User = (props) => {
     return (<div className={style.user}>
