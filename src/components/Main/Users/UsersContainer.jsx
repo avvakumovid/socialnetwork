@@ -17,7 +17,8 @@ import {
     getUserFollowingInProgress,
     getUserIsFetching,
     getUsersPageSize,
-    getUsers, getUsersSuperSelector
+    getUsers, getUsersSuperSelector,
+    getUserPortionSize
 } from "../../../redux/user-selectors";
 
 
@@ -29,6 +30,10 @@ class UsersComponent extends React.Component {
 
     setCurrentPage = (page) => {
         this.props.requestUsers(page, this.props.pageSize);
+    }
+    onPageChanged = (pageNumber) => {
+        const {pageSize} = this.props;
+        this.props.requestUsers(pageNumber, pageSize);
     }
 
 
@@ -48,6 +53,8 @@ class UsersComponent extends React.Component {
                             followingInProgress={this.props.followingInProgress}
                            following={this.props.following}
                            unfollowing={this.props.unfollowing}
+                           portionSize={this.props.portionSize}
+                           onPageChanged={this.onPageChanged}
                     />}
             </div>
         )
@@ -74,7 +81,8 @@ const mapStateToProps = (state) => {
         pageSize: getUsersPageSize(state),
         currentPage: getCurrentPage(state),
         isFetching: getUserIsFetching(state),
-        followingInProgress: getUserFollowingInProgress(state)
+        followingInProgress: getUserFollowingInProgress(state),
+        portionSize: getUserPortionSize(state)
 
     }
 }
