@@ -2,14 +2,23 @@ import React from "react";
 import Paginator from "../../common/Paginator/Paginator";
 import User from "./User";
 
-const Users = ({currentPage, setCurrentPage, totalUserCount, pageSize, portionSize, onPageChanged, ...props}) => {
-
-    return (<div>
-        <Paginator currentPage={currentPage} setCurrentPage={setCurrentPage} totalUserCount={totalUserCount} pageSize={pageSize} portionSize={portionSize} onPageChanged={onPageChanged}/>
-        {props.users.map(u => { return <User user={u} unfollowing={props.unfollowing} followingInProgress={props.followingInProgress} following={props.following}  />
-
-        })}
-    </div>)
+let Users = ({currentPage, totalUserCount, pageSize, onPageChanged, users, ...props}) => {
+    return <div>
+        {/*<Preloader/>*/}
+        <Paginator currentPage={currentPage} onPageChanged={onPageChanged}
+                   totalUserCount={totalUserCount} pageSize={pageSize}/>
+        <div>
+            {
+                users.map(u => <User user={u}
+                                     followingInProgress={props.followingInProgress}
+                                     key={u.id}
+                                     unfollow={props.unfollow}
+                                     follow={props.follow}
+                    />
+                )
+            }
+        </div>
+    </div>
 }
 
 export default Users;

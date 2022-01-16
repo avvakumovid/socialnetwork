@@ -69,7 +69,7 @@ const userReducer = (state = initialState, action) => {
                     [...state.followingInProgress.filter(id => id !== action.userId)]
             }
         default:
-            let copyState = {...state}
+            // let copyState = {...state}
             return state;
     }
 }

@@ -7,7 +7,7 @@ let initialState = {friends: [
 const sidebarReducer = (state = initialState, action) => {
     switch (action.type){
         default:
-            let copyState = {...state}
+            // let copyState = {...state}
             return state;
     }
 }

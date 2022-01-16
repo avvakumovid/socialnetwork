@@ -1,29 +1,57 @@
-import {createSelector} from "reselect";
+import {createSelector} from 'reselect';
 
-export const getUsers = (state) => {
-    return state.usersPage.users;
-}
 export const getUsersSelector = (state) => {
-    return getUsers(state).filter(u => true);
+    return state.usersPage.users
 }
-export const getUsersSuperSelector = createSelector(getUsers, (users)  => {
-    return users.filter(u => true);
+
+export const getUsers = createSelector(getUsersSelector, (users) => {
+    return users.filter(u => true)
 })
-export const getTotalUserCount = (state) => {
+
+
+export const getTotalUserCountSelector = (state) => {
     return state.usersPage.totalUserCount;
 }
-export const getUsersPageSize = (state) => {
+
+export const getTotalUserCount = createSelector(getTotalUserCountSelector, (totalUserCount) => {
+    return totalUserCount
+})
+export const getUsersPageSizeSelector = (state) => {
     return state.usersPage.pageSize;
 }
-export const getUserPortionSize = (state) => {
+
+export const getUsersPageSize = createSelector(getUsersPageSizeSelector, (pageSize) => {
+    return pageSize
+})
+
+export const getUserPortionSizeSelector = (state) => {
     return state.usersPage.portionSize;
 }
-export const getCurrentPage = (state) => {
+
+export const getUserPortionSize = createSelector(getUserPortionSizeSelector, (portionSize) => {
+    return portionSize
+})
+
+export const getCurrentPageSelector = (state) => {
     return state.usersPage.currentPage;
 }
-export const getUserIsFetching = (state) => {
+
+export const getCurrentPage = createSelector(getCurrentPageSelector, (currentPage) => {
+    return currentPage
+})
+
+export const getUserIsFetchingSelector = (state) => {
     return state.usersPage.isFetching;
 }
-export const getUserFollowingInProgress = (state) => {
-    return  state.usersPage.followingInProgress;
+
+export const getUserIsFetching = createSelector(getUserIsFetchingSelector, (isFetching) => {
+    return isFetching
+})
+
+export const getUserFollowingInProgressSelector = (state) => {
+    return state.usersPage.followingInProgress;
 }
+
+export const getUserFollowingInProgress = createSelector(getUserFollowingInProgressSelector, (followingInProgress) => {
+    return followingInProgress
+})
